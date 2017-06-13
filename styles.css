@@ -1,5 +1,8 @@
 /* Input-Form */
 
+#language {
+background-color: #ffffaa;
+}
 #header {
 background-color: #cccccc;
 }
@@ -26,6 +29,7 @@ background-color: #ffaaff;
 
 body {
   font-family: Arial,Helvetica,sans-serif;
+  font-size: 14px
 }
 
 div {
@@ -35,8 +39,8 @@ div {
 #bill {
   border-style: solid;
   border-width: 1px;
-  width:800px;
-  height:500px;
+  width: 148mm;
+  height: 105mm;
   margin-left: 0px;
 }
 

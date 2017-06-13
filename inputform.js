@@ -24,8 +24,8 @@ function fill_example1() {
   document.forms['form']['QRCH.RmtInf.Tp'].value = 'QRR';
   document.forms['form']['QRCH.RmtInf.Ref'].value = '210000000003139471430009017';
   document.forms['form']['QRCH.RmtInf.Ustrd'].value = 'Auftrag vom 15.09.2019##S1/01/20170309/11/10201409/20/14000000/22/36958/30/CH106017086/40/1020/41/3010';
-  document.forms['form']['QRCH.AltPmtInf.AltPmt'].value = 'UV1;1.1;1278564;1A-2F-43-AC-9B-33-21-B0-CC-D4-28-56;TCXVMKC22;2019-02-10T15:12:39; 2019-02-10T15:18:16';
-  document.forms['form']['QRCH.AltPmtInf.AltPmt2'].value = 'XY2;2a-2.2r;_R1-CH2_ConradCH-2074-1_3350_2019-03-13T10:23:47_16,99_0,00_0,00_0,00_0,00_+8FADt/DQ=_1==';
+  document.forms['form']['QRCH.AltPmtInf.AltPmt'].value =  'UV1;1.1;1278564;1A-2F-43-AC-9B-33-21-B0-CC-D4-28-56;TCXVMKC22;2019-02-10T15:12:39;2019-02-10T15:18';
+  document.forms['form']['QRCH.AltPmtInf.AltPmt2'].value = 'XY2;2a-2.2r;_R1-CH2_ConradCH-2074-1_3350_2019-03-13T10:23_16,99_0,00_0,00_0,00_0,00_+8FADt/DQ=_1==';
 }
 
 function fill_example2() {
