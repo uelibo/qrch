@@ -49,7 +49,7 @@
     <tr id="creditor">
       <td>IBAN</td>
       <td>M</td>
-      <td><input type="text" name="QRCH.CdtrInf.IBAN" value="CH" size="22"></td>
+      <td><input type="text" name="QRCH.CdtrInf.IBAN" value="CH" size="22" maxlength="21"></td>
       <td>21</td>
     </tr>
     <tr id="creditor">
@@ -61,37 +61,37 @@
     <tr id="creditor">
       <td>Name</td>
       <td>M</td>
-      <td><input type="text" name="QRCH.CdtrInf.Cdtr.Name" size="40"></td>
+      <td><input type="text" name="QRCH.CdtrInf.Cdtr.Name" size="40" maxlength="70"></td>
       <td>-70</td>
     </tr>
     <tr id="creditor">
       <td>Street</td>
       <td>O</td>
-      <td><input type="text" name="QRCH.CdtrInf.Cdtr.StrtNm" size="40"></td>
+      <td><input type="text" name="QRCH.CdtrInf.Cdtr.StrtNm" size="40" maxlength="70"></td>
       <td>0-70</td>
     </tr>
     <tr id="creditor">
       <td>House number</td>
       <td>O</td>
-      <td><input type="text" name="QRCH.CdtrInf.Cdtr.BldgNb"></td>
+      <td><input type="text" name="QRCH.CdtrInf.Cdtr.BldgNb" maxlength="16"></td>
       <td>0-16</td>
     </tr>
     <tr id="creditor">
       <td>Postal code</td>
       <td>M</td>
-      <td><input type="text" name="QRCH.CdtrInf.Cdtr.PstCd"></td>
+      <td><input type="text" name="QRCH.CdtrInf.Cdtr.PstCd" maxlength="16"></td>
       <td>-16</td>
     </tr>
     <tr id="creditor">
       <td>City</td>
       <td>M</td>
-      <td><input type="text" name="QRCH.CdtrInf.Cdtr.TwnNm"></td>
+      <td><input type="text" name="QRCH.CdtrInf.Cdtr.TwnNm" maxlength="35"></td>
       <td>-35</td>
     </tr>
     <tr id="creditor">
       <td>Country</td>
       <td>M</td>
-      <td><input type="text" name="QRCH.CdtrInf.Cdtr.Ctry" value="CH"></td>
+      <td><input type="text" name="QRCH.CdtrInf.Cdtr.Ctry" value="CH" maxlength="2"></td>
       <td>2</td>
     </tr>
     <tr id="ultimatecreditor">
@@ -103,37 +103,37 @@
     <tr id="ultimatecreditor">
       <td>Name</td>
       <td>D</td>
-      <td><input type="text" name="QRCH.UltmtCdtr.Name" size="40"></td>
+      <td><input type="text" name="QRCH.UltmtCdtr.Name" size="40" maxlength="70"></td>
       <td>0-70</td>
     </tr>
     <tr id="ultimatecreditor">
       <td>Street</td>
       <td>O</td>
-      <td><input type="text" name="QRCH.UltmtCdtr.StrtNm" size="40"></td>
+      <td><input type="text" name="QRCH.UltmtCdtr.StrtNm" size="40" maxlength="70"></td>
       <td>0-70</td>
     </tr>
     <tr id="ultimatecreditor">
       <td>House number</td>
       <td>O</td>
-      <td><input type="text" name="QRCH.UltmtCdtr.BldgNb"></td>
+      <td><input type="text" name="QRCH.UltmtCdtr.BldgNb" maxlength="16"></td>
       <td>0-16</td>
     </tr>
     <tr id="ultimatecreditor">
       <td>Postal code</td>
       <td>D</td>
-      <td><input type="text" name="QRCH.UltmtCdtr.PstCd"></td>
+      <td><input type="text" name="QRCH.UltmtCdtr.PstCd" maxlength="16"></td>
       <td>0-16</td>
     </tr>
     <tr id="ultimatecreditor">
       <td>City</td>
       <td>D</td>
-      <td><input type="text" name="QRCH.UltmtCdtr.TwnNm"></td>
+      <td><input type="text" name="QRCH.UltmtCdtr.TwnNm" maxlength="35"></td>
       <td>0-35</td>
     </tr>
     <tr id="ultimatecreditor">
       <td>Country</td>
       <td>D</td>
-      <td><input type="text" name="QRCH.UltmtCdtr.Ctry"></td>
+      <td><input type="text" name="QRCH.UltmtCdtr.Ctry" maxlength="2"></td>
       <td>0/2</td>
     </tr>
     <tr id="paymentinfo">
@@ -145,7 +145,7 @@
     <tr id="paymentinfo">
       <td>Amount</td>
       <td>O</td>
-      <td><input type="text" name="QRCH.CcyAmtDate.Amt"></td>
+      <td><input type="text" name="QRCH.CcyAmtDate.Amt" maxlength="12"></td>
       <td>0-12</td>
     </tr>
     <tr id="paymentinfo">
@@ -162,7 +162,7 @@
     <tr id="paymentinfo">
       <td>Due date</td>
       <td>O</td>
-      <td><input type="text" name="QRCH.CcyAmtDate.ReqdExctnDt"></td>
+      <td><input type="text" name="QRCH.CcyAmtDate.ReqdExctnDt" maxlength="10"></td>
       <td>YYYY-MM-DD</td>
     </tr>
     <tr id="deptor">
@@ -174,37 +174,37 @@
     <tr id="deptor">
       <td>Name</td>
       <td>D</td>
-      <td><input type="text" name="QRCH.UltmtDbtr.Name" size="40"></td>
+      <td><input type="text" name="QRCH.UltmtDbtr.Name" size="40" maxlength="70"></td>
       <td>0-70</td>
     </tr>
     <tr id="deptor">
       <td>Street</td>
       <td>O</td>
-      <td><input type="text" name="QRCH.UltmtDbtr.StrtNm" size="40"></td>
+      <td><input type="text" name="QRCH.UltmtDbtr.StrtNm" size="40" maxlength="70"></td>
       <td>0-70</td>
     </tr>
     <tr id="deptor">
       <td>House number</td>
       <td>O</td>
-      <td><input type="text" name="QRCH.UltmtDbtr.BldgNb"></td>
+      <td><input type="text" name="QRCH.UltmtDbtr.BldgNb" maxlength="16"></td>
       <td>0-16</td>
     </tr>
     <tr id="deptor">
       <td>Postal code</td>
       <td>D</td>
-      <td><input type="text" name="QRCH.UltmtDbtr.PstCd"></td>
+      <td><input type="text" name="QRCH.UltmtDbtr.PstCd" maxlength="16"></td>
       <td>0-16</td>
     </tr>
     <tr id="deptor">
       <td>City</td>
       <td>D</td>
-      <td><input type="text" name="QRCH.UltmtDbtr.TwnNm"></td>
+      <td><input type="text" name="QRCH.UltmtDbtr.TwnNm" maxlength="35"></td>
       <td>0-35</td>
     </tr>
     <tr id="deptor">
       <td>Country</td>
       <td>D</td>
-      <td><input type="text" name="QRCH.UltmtDbtr.Ctry"></td>
+      <td><input type="text" name="QRCH.UltmtDbtr.Ctry" maxlength="2"></td>
       <td>0/2</td>
     </tr>
     <tr id="reference">
@@ -228,13 +228,13 @@
     <tr id="reference">
       <td>Reference</td>
       <td>O</td>
-      <td><input type="text" name="QRCH.RmtInf.Ref" size="40"></td>
+      <td><input type="text" name="QRCH.RmtInf.Ref" size="40" maxlength="27"></td>
       <td>NON:0/QRR:25/SCOR:27</td>
     </tr>
     <tr id="reference">
       <td>Unstructured message</td>
       <td>O</td>
-      <td><input type="text" name="QRCH.RmtInf.Ustrd" size="40"></td>
+      <td><input type="text" name="QRCH.RmtInf.Ustrd" size="40" maxlength="140"></td>
       <td>0-140</td>
     </tr>
     <tr id="altschemes">
@@ -246,13 +246,13 @@
     <tr id="altschemes">
       <td>Alternative scheme parameters 1</td>
       <td>A</td>
-      <td><input type="text" name="QRCH.AltPmtInf.AltPmt" size="40"></td>
+      <td><input type="text" name="QRCH.AltPmtInf.AltPmt" size="40" maxlength="100"></td>
       <td>0-100</td>
     </tr>
     <tr id="altschemes">
       <td>Alternative scheme parameters 2</td>
       <td>A</td>
-      <td><input type="text" name="QRCH.AltPmtInf.AltPmt2" size="40"></td>
+      <td><input type="text" name="QRCH.AltPmtInf.AltPmt2" size="40" maxlength="100"></td>
       <td>0-100</td>
     </tr>
   </table>
