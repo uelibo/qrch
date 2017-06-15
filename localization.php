@@ -16,7 +16,7 @@ $TEXT['Amount']                 = "Amount";
 if ($_POST['language'] == "DE") {
   $TEXT['QR-bill payment']        = "Zahlteil QR-Rechnung";
   $TEXT['Supports']               = "Unterstützt";
-  $TEXT['Credit transfer']        = "Ueberweisung";
+  $TEXT['Credit transfer']        = "Überweisung";
   $TEXT['Account']                = "Konto";
   $TEXT['Creditor']               = "Zahlungsempfänger";
   $TEXT['Ultimate creditor']      = "Endgültiger Zahlungsempfänger";
@@ -37,7 +37,7 @@ if ($_POST['language'] == "DE") {
   $TEXT['Reference Number']       = "Numéro de référenc";
   $TEXT['Additional information'] = "Informations supplémentaires";
   $TEXT['Debtor']                 = "Débiteur";
-  $TEXT['Due date']               = "A payer jusqu'au";
+  $TEXT['Due date']               = "À payer jusqu'au";
   $TEXT['Currency']               = "Monnaie";
   $TEXT['Amount']                 = "Montant";
 
