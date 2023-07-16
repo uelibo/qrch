@@ -42,7 +42,7 @@ if (isset($_REQUEST['QRCH_CdtrInf_IBAN'])) {
   $data .= $_REQUEST['QRCH_RmtInf_Tp'] . $delim;
   $data .= $_REQUEST['QRCH_RmtInf_Ref'] . $delim;
   // + RmtInf ++ AddInf
-  $data .= $_REQUEST['QRCH_RmtInf_Ustrd'] .$delim;
+  $data .= $_REQUEST['QRCH_RmtInf_AddInf_Ustrd'] .$delim;
   $data .= $_REQUEST['QRCH_RmtInf_AddInf_Trailer'];
   
   if (strlen($_REQUEST['QRCH_AltPmtInf_AltPmt']) > 0)
