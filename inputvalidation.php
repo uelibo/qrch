@@ -159,7 +159,7 @@ if(strlen($_REQUEST['QRCH_RmtInf_Ref']) > 27)
   die("ERROR field reference is too long");
 
 // ++ Ustrd       O   Mitteilung                            140max
-// $_REQUEST['QRCH_RmtInf_Ustrd']
+// $_REQUEST['QRCH_RmtInf_AddInf_Ustrd']
 if(strlen($_REQUEST['QRCH_RmtInf_AddInf_Ustrd']) > 140)
   die("ERROR field unstructured message is too long");
 

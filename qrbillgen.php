@@ -147,9 +147,9 @@ if (isset($_REQUEST['QRCH_CdtrInf_IBAN'])) {
         <div id="texttitle"><?php echo $TEXT['Reference Number']; ?></div>
         <div id="content"><?php echo $_REQUEST['QRCH_RmtInf_Ref']; ?></div>
         <?php } ?>
-        <?php if($_REQUEST['QRCH_RmtInf_Ustrd'] != "") { ?>
+        <?php if($_REQUEST['QRCH_RmtInf_AddInf_Ustrd'] != "") { ?>
         <div id="texttitle"><?php echo $TEXT['Additional information']; ?></div>
-        <div id="content"><?php echo chunk_split($_REQUEST['QRCH_RmtInf_Ustrd'], 42); ?></div>
+        <div id="content"><?php echo chunk_split($_REQUEST['QRCH_RmtInf_AddInf_Ustrd'], 42); ?></div>
         <?php } ?>
         <div id="texttitle"><?php echo $TEXT['Debtor']; ?></div>
         <div id="content"><?php
