@@ -24,19 +24,21 @@
     </tr>
     <tr id="header">
       <td>QRType</td>
-      <td>M</td>
-      <td><input type="text" name="QRCH.Header.QRType" value="SPC" size=10 readonly></td>
+      <td>Mandatory</td>
+      <td>
+        <input type="text" name="QRCH.Header.QRType" value="SPC" size=10 readonly>
+      </td>
       <td>3</td>
     </tr>
     <tr id="header">
       <td>Version</td>
-      <td>M</td>
-      <td><input type="text" name="QRCH.Header.Version" value="0100" size=10 readonly></td>
+      <td>Mandatory</td>
+      <td><input type="text" name="QRCH.Header.Version" value="0200" size=10 readonly></td>
       <td>4</td>
     </tr>
     <tr id="header">
       <td>Coding type</td>
-      <td>M</td>
+      <td>Mandatory</td>
       <td><input type="text" name="QRCH.Header.Coding" value="1" size=10 readonly></td>
       <td>1</td>
     </tr>
@@ -48,7 +50,7 @@
     </tr>
     <tr id="creditor">
       <td>IBAN</td>
-      <td>M</td>
+      <td>Mandatory</td>
       <td><input type="text" name="QRCH.CdtrInf.IBAN" value="CH" size="22" maxlength="21"></td>
       <td>21</td>
     </tr>
@@ -59,81 +61,98 @@
       <td></td>
     </tr>
     <tr id="creditor">
+      <td>Address Type</td>
+      <td>Mandatory</td>
+      <td>
+        <select name="QRCH.CdtrInf.Cdtr.AdrTp">
+          <option value="S">S - Structured</option>
+          <option value="K">K - Combined (2 Lines)</option>
+        </select>
+      </td>
+      <td>1</td>
+    </tr>
+    <tr id="creditor">
       <td>Name</td>
-      <td>M</td>
+      <td>Mandatory</td>
       <td><input type="text" name="QRCH.CdtrInf.Cdtr.Name" size="40" maxlength="70"></td>
       <td>-70</td>
     </tr>
     <tr id="creditor">
-      <td>Street</td>
-      <td>O</td>
-      <td><input type="text" name="QRCH.CdtrInf.Cdtr.StrtNm" size="40" maxlength="70"></td>
-      <td>0-70</td>
+      <td>Structured: Street<br>Combined: Line 1</td>
+      <td>Optional</td>
+      <td><input type="text" name="QRCH.CdtrInf.Cdtr.StrtNmOrAdrLine1" size="40" maxlength="70"></td>
+      <td>Structured: 0-70, Combined: Mandatory -70</td>
     </tr>
     <tr id="creditor">
-      <td>House number</td>
-      <td>O</td>
-      <td><input type="text" name="QRCH.CdtrInf.Cdtr.BldgNb" maxlength="16"></td>
-      <td>0-16</td>
+      <td>Structured: House number<br>Combined: Line 2</td>
+      <td>Optional</td>
+      <td><input type="text" name="QRCH.CdtrInf.Cdtr.BldgNbOrAdrLine2" size="40" maxlength="70"></td>
+      <td>Strucured: 0-16, Combined: Mandatory -70</td>
     </tr>
     <tr id="creditor">
       <td>Postal code</td>
-      <td>M</td>
+      <td>Dependent</td>
       <td><input type="text" name="QRCH.CdtrInf.Cdtr.PstCd" maxlength="16"></td>
-      <td>-16</td>
+      <td>Structured: -16, Combined: Empty</td>
     </tr>
     <tr id="creditor">
       <td>City</td>
-      <td>M</td>
+      <td>Dependent</td>
       <td><input type="text" name="QRCH.CdtrInf.Cdtr.TwnNm" maxlength="35"></td>
-      <td>-35</td>
+      <td>Strucured: -35, Combined: Empty</td>
     </tr>
     <tr id="creditor">
       <td>Country</td>
-      <td>M</td>
+      <td>Mandatory</td>
       <td><input type="text" name="QRCH.CdtrInf.Cdtr.Ctry" value="CH" maxlength="2"></td>
       <td>2</td>
     </tr>
     <tr id="ultimatecreditor">
       <td>Ultimate creditor</td>
       <td></td>
-      <td>(Optional)</td>
+      <td>(for future use / leave blank!)</td>
       <td></td>
     </tr>
     <tr id="ultimatecreditor">
+      <td>Address Type</td>
+      <td>X</td>
+      <td><input type="text" name="QRCH.UltmtCdtr.AdrTp" size="40" maxlength="70" readonly></td>
+      <td>1</td>
+    </tr>
+    <tr id="ultimatecreditor">
       <td>Name</td>
-      <td>D</td>
-      <td><input type="text" name="QRCH.UltmtCdtr.Name" size="40" maxlength="70"></td>
+      <td>X</td>
+      <td><input type="text" name="QRCH.UltmtCdtr.Name" size="40" maxlength="70" readonly></td>
       <td>0-70</td>
     </tr>
     <tr id="ultimatecreditor">
-      <td>Street</td>
-      <td>O</td>
-      <td><input type="text" name="QRCH.UltmtCdtr.StrtNm" size="40" maxlength="70"></td>
+      <td>Structured: Street<br>Combined: Line 1</td>
+      <td>X</td>
+      <td><input type="text" name="QRCH.UltmtCdtr.StrtNmOrAdrLine1" size="40" maxlength="70" readonly></td>
       <td>0-70</td>
     </tr>
     <tr id="ultimatecreditor">
-      <td>House number</td>
-      <td>O</td>
-      <td><input type="text" name="QRCH.UltmtCdtr.BldgNb" maxlength="16"></td>
-      <td>0-16</td>
+      <td>Structured: House number<br>Combined: Line 2</td>
+      <td>X</td>
+      <td><input type="text" name="QRCH.UltmtCdtr.BldgNbOrAdrLine2" size="40" maxlength="70" readonly></td>
+      <td>0-70</td>
     </tr>
     <tr id="ultimatecreditor">
       <td>Postal code</td>
-      <td>D</td>
-      <td><input type="text" name="QRCH.UltmtCdtr.PstCd" maxlength="16"></td>
+      <td>X</td>
+      <td><input type="text" name="QRCH.UltmtCdtr.PstCd" maxlength="16" readonly></td>
       <td>0-16</td>
     </tr>
     <tr id="ultimatecreditor">
       <td>City</td>
-      <td>D</td>
-      <td><input type="text" name="QRCH.UltmtCdtr.TwnNm" maxlength="35"></td>
+      <td>X</td>
+      <td><input type="text" name="QRCH.UltmtCdtr.TwnNm" maxlength="35" readonly></td>
       <td>0-35</td>
     </tr>
     <tr id="ultimatecreditor">
       <td>Country</td>
-      <td>D</td>
-      <td><input type="text" name="QRCH.UltmtCdtr.Ctry" maxlength="2"></td>
+      <td>X</td>
+      <td><input type="text" name="QRCH.UltmtCdtr.Ctry" maxlength="2" readonly></td>
       <td>0/2</td>
     </tr>
     <tr id="paymentinfo">
@@ -144,13 +163,13 @@
     </tr>
     <tr id="paymentinfo">
       <td>Amount</td>
-      <td>O</td>
-      <td><input type="text" name="QRCH.CcyAmtDate.Amt" maxlength="12"></td>
-      <td>0-12</td>
+      <td>Optional</td>
+      <td><input type="text" name="QRCH.CcyAmtDate.Amt" maxlength="12" placeholder="0.00"></td>
+      <td>0-12, Format: 1.00<br>Value between 0.01 and 999999999.99</td>
     </tr>
     <tr id="paymentinfo">
       <td>Currency</td>
-      <td>M</td>
+      <td>Mandatory</td>
       <td>
         <select name="QRCH.CcyAmtDate.Ccy">
           <option>CHF</option>
@@ -159,12 +178,6 @@
       </td>
       <td></td>
     </tr>
-    <tr id="paymentinfo">
-      <td>Due date</td>
-      <td>O</td>
-      <td><input type="text" name="QRCH.CcyAmtDate.ReqdExctnDt" maxlength="10"></td>
-      <td>YYYY-MM-DD</td>
-    </tr>
     <tr id="deptor">
       <td>Ultimate debtor</td>
       <td></td>
@@ -172,38 +185,50 @@
       <td></td>
     </tr>
     <tr id="deptor">
+      <td>Address Type</td>
+      <td>Dependent</td>
+      <td>
+        <select name="QRCH.UltmtDbtr.AdrTp">
+          <option value="">empty - no deptor</option>
+          <option value="S">S - Structured</option>
+          <option value="K">K - Combined (2 Lines)</option>
+        </select>
+      </td>
+      <td>1</td>
+    </tr>
+    <tr id="deptor">
       <td>Name</td>
-      <td>D</td>
+      <td>Dependent</td>
       <td><input type="text" name="QRCH.UltmtDbtr.Name" size="40" maxlength="70"></td>
       <td>0-70</td>
     </tr>
     <tr id="deptor">
-      <td>Street</td>
-      <td>O</td>
-      <td><input type="text" name="QRCH.UltmtDbtr.StrtNm" size="40" maxlength="70"></td>
-      <td>0-70</td>
+      <td>Structured: Street<br>Combined: Line 1</td>
+      <td>Optional</td>
+      <td><input type="text" name="QRCH.UltmtDbtr.StrtNmOrAdrLine1" size="40" maxlength="70"></td>
+      <td>Structured: 0-70, Combined: Mandatory -70</td>
     </tr>
     <tr id="deptor">
-      <td>House number</td>
-      <td>O</td>
-      <td><input type="text" name="QRCH.UltmtDbtr.BldgNb" maxlength="16"></td>
-      <td>0-16</td>
+      <td>Structured: House number<br>Combined: Line 2</td>
+      <td>Optional</td>
+      <td><input type="text" name="QRCH.UltmtDbtr.BldgNbOrAdrLine2" size="40" maxlength="70"></td>
+      <td>Structured: 0-16, Combined: Mandatory -70</td>
     </tr>
     <tr id="deptor">
       <td>Postal code</td>
-      <td>D</td>
+      <td>Dependent</td>
       <td><input type="text" name="QRCH.UltmtDbtr.PstCd" maxlength="16"></td>
-      <td>0-16</td>
+      <td>Structured: -16, Combined: Empty</td>
     </tr>
     <tr id="deptor">
       <td>City</td>
-      <td>D</td>
+      <td>Dependent</td>
       <td><input type="text" name="QRCH.UltmtDbtr.TwnNm" maxlength="35"></td>
-      <td>0-35</td>
+      <td>Strucured: -35, Combined: Empty</td>
     </tr>
     <tr id="deptor">
       <td>Country</td>
-      <td>D</td>
+      <td>Dependent</td>
       <td><input type="text" name="QRCH.UltmtDbtr.Ctry" maxlength="2"></td>
       <td>0/2</td>
     </tr>
@@ -215,26 +240,26 @@
     </tr>
     <tr id="reference">
       <td>Reference type</td>
-      <td>M</td>
+      <td>Mandatory</td>
       <td>
         <select name="QRCH.RmtInf.Tp">
-          <option>QRR</option>
-          <option>SCOR</option>
-          <option>NON</option>
+          <option value="QRR">QRR - QR-Reference</option>
+          <option value="SCOR">SCOR - Creditor Reference (ISO 11649)</option>
+          <option value="NON">NON - without Reference</option>
         </select>
       </td>
-      <td></td>
+      <td>-4</td>
     </tr>
     <tr id="reference">
       <td>Reference</td>
-      <td>O</td>
+      <td>Dependent</td>
       <td><input type="text" name="QRCH.RmtInf.Ref" size="40" maxlength="27"></td>
-      <td>NON:0/QRR:25/SCOR:27</td>
+      <td>QRR:27/SCOR:5-25/NON:0</td>
     </tr>
     <tr id="reference">
       <td>Unstructured message</td>
-      <td>O</td>
-      <td><input type="text" name="QRCH.RmtInf.Ustrd" size="40" maxlength="140"></td>
+      <td>Optional</td>
+      <td><input type="text" name="QRCH.RmtInf.AddInf.Ustrd" size="40" maxlength="140"></td>
       <td>0-140</td>
     </tr>
     <tr id="altschemes">
@@ -242,18 +267,6 @@
       <td></td>
       <td>(Optional)</td>
       <td></td>
-    </tr>
-    <tr id="altschemes">
-      <td>Alternative scheme parameters 1</td>
-      <td>A</td>
-      <td><input type="text" name="QRCH.AltPmtInf.AltPmt" size="40" maxlength="100"></td>
-      <td>0-100</td>
-    </tr>
-    <tr id="altschemes">
-      <td>Alternative scheme parameters 2</td>
-      <td>A</td>
-      <td><input type="text" name="QRCH.AltPmtInf.AltPmt2" size="40" maxlength="100"></td>
-      <td>0-100</td>
     </tr>
   </table>
   <input name="submit" value="submit" type="submit">

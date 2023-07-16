@@ -25,6 +25,11 @@ background-color: #ffffaa;
 background-color: #ffaaff;
 }
 
+input:read-only {
+  background-color: #ddd;
+  border: 1px solid #888;
+}
+
 /*  Output  */
 
 body {

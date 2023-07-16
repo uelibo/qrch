@@ -5,34 +5,45 @@ if (isset($_REQUEST['QRCH_CdtrInf_IBAN'])) {
   include("inputvalidation.php");
 
   $delim = "\r\n";
-  $data  = $_REQUEST['QRCH_Header_QRType'] . $delim;
+  // + Header
+  $data = $_REQUEST['QRCH_Header_QRType'] . $delim;
   $data .= $_REQUEST['QRCH_Header_Version'] . $delim;
   $data .= $_REQUEST['QRCH_Header_Coding'] . $delim;
+  // + CdtrInf
   $data .= $_REQUEST['QRCH_CdtrInf_IBAN'] . $delim;
+  // + Cdtr
+  $data .= $_REQUEST['QRCH_CdtrInf_Cdtr_AdrTp'] . $delim;
   $data .= $_REQUEST['QRCH_CdtrInf_Cdtr_Name'] . $delim;
-  $data .= $_REQUEST['QRCH_CdtrInf_Cdtr_StrtNm'] . $delim;
-  $data .= $_REQUEST['QRCH_CdtrInf_Cdtr_BldgNb'] . $delim;
+  $data .= $_REQUEST['QRCH_CdtrInf_Cdtr_StrtNmOrAdrLine1'] . $delim;
+  $data .= $_REQUEST['QRCH_CdtrInf_Cdtr_BldgNbOrAdrLine2'] . $delim;
   $data .= $_REQUEST['QRCH_CdtrInf_Cdtr_PstCd'] . $delim;
   $data .= $_REQUEST['QRCH_CdtrInf_Cdtr_TwnNm'] . $delim;
   $data .= $_REQUEST['QRCH_CdtrInf_Cdtr_Ctry'] . $delim;
-  $data .= $_REQUEST['QRCH_UltmtCdtr_Name'] . $delim;
-  $data .= $_REQUEST['QRCH_UltmtCdtr_StrtNm'] . $delim;
-  $data .= $_REQUEST['QRCH_UltmtCdtr_BldgNb'] . $delim;
-  $data .= $_REQUEST['QRCH_UltmtCdtr_PstCd'] . $delim;
-  $data .= $_REQUEST['QRCH_UltmtCdtr_TwnNm'] . $delim;
-  $data .= $_REQUEST['QRCH_UltmtCdtr_Ctry'] . $delim;
+  // + UltmtCdtr
+  $data .= '' . $delim; // QRCH_UltmtCdtr_AdrTp
+  $data .= '' . $delim; // QRCH_UltmtCdtr_Name
+  $data .= '' . $delim; // QRCH_UltmtCdtr_StrtNmOrAdrLine1
+  $data .= '' . $delim; // QRCH_UltmtCdtr_BldgNbOrAdrLine2
+  $data .= '' . $delim; // QRCH_UltmtCdtr_PstCd
+  $data .= '' . $delim; // QRCH_UltmtCdtr_TwnNm
+  $data .= '' . $delim; // QRCH_UltmtCdtr_Ctry
+  // + CcyAmt
   $data .= $_REQUEST['QRCH_CcyAmtDate_Amt'] . $delim;
   $data .= $_REQUEST['QRCH_CcyAmtDate_Ccy'] . $delim;
-  $data .= $_REQUEST['QRCH_CcyAmtDate_ReqdExctnDt'] . $delim;
+  // + UltmtDbtr
+  $data .= $_REQUEST['QRCH_UltmtDbtr_AdrTp'] . $delim;
   $data .= $_REQUEST['QRCH_UltmtDbtr_Name'] . $delim;
-  $data .= $_REQUEST['QRCH_UltmtDbtr_StrtNm'] . $delim;
-  $data .= $_REQUEST['QRCH_UltmtDbtr_BldgNb'] . $delim;
+  $data .= $_REQUEST['QRCH_UltmtDbtr_StrtNmOrAdrLine1'] . $delim;
+  $data .= $_REQUEST['QRCH_UltmtDbtr_BldgNbOrAdrLine2'] . $delim;
   $data .= $_REQUEST['QRCH_UltmtDbtr_PstCd'] . $delim;
   $data .= $_REQUEST['QRCH_UltmtDbtr_TwnNm'] . $delim;
   $data .= $_REQUEST['QRCH_UltmtDbtr_Ctry'] . $delim;
+  // + RmtInf
   $data .= $_REQUEST['QRCH_RmtInf_Tp'] . $delim;
   $data .= $_REQUEST['QRCH_RmtInf_Ref'] . $delim;
-  $data .= $_REQUEST['QRCH_RmtInf_Ustrd'];
+  // + RmtInf ++ AddInf
+  $data .= $_REQUEST['QRCH_RmtInf_Ustrd'] .$delim;
+  $data .= $_REQUEST['QRCH_RmtInf_AddInf_Trailer'];
   
   if (strlen($_REQUEST['QRCH_AltPmtInf_AltPmt']) > 0)
     $data .= $delim . $_REQUEST['QRCH_AltPmtInf_AltPmt'] ;
@@ -42,22 +53,22 @@ if (isset($_REQUEST['QRCH_CdtrInf_IBAN'])) {
   
 
   $creditor  = $_REQUEST['QRCH_CdtrInf_Cdtr_Name'];
-  if (strlen($_REQUEST['QRCH_CdtrInf_Cdtr_StrtNm']) > 0 || strlen($_REQUEST['QRCH_CdtrInf_Cdtr_BldgNb']) > 0)
-    $creditor .= "<br />" . $_REQUEST['QRCH_CdtrInf_Cdtr_StrtNm'] . " " . $_REQUEST['QRCH_CdtrInf_Cdtr_BldgNb'];
+  if (strlen($_REQUEST['QRCH_CdtrInf_Cdtr_StrtNmOrAdrLine1']) > 0 || strlen($_REQUEST['QRCH_CdtrInf_Cdtr_BldgNbOrAdrLine2']) > 0)
+    $creditor .= "<br />" . $_REQUEST['QRCH_CdtrInf_Cdtr_StrtNmOrAdrLine1'] . " " . $_REQUEST['QRCH_CdtrInf_Cdtr_BldgNbOrAdrLine2'];
   $creditor .= "<br />" . $_REQUEST['QRCH_CdtrInf_Cdtr_Ctry'] . "-" . $_REQUEST['QRCH_CdtrInf_Cdtr_PstCd'] . " " . $_REQUEST['QRCH_CdtrInf_Cdtr_TwnNm'];
   
 
   if (strlen($_REQUEST['QRCH_UltmtCdtr_Name']) > 0) {
     $ultimate_creditor = $_REQUEST['QRCH_UltmtCdtr_Name'];
-    if (strlen($_REQUEST['QRCH_UltmtCdtr_StrtNm']) > 0 || strlen($_REQUEST['QRCH_UltmtCdtr_BldgNb']) > 0)
-      $ultimate_creditor .= "<br />" . $_REQUEST['QRCH_UltmtCdtr_StrtNm'] . " " . $_REQUEST['QRCH_UltmtCdtr_BldgNb'];
+    if (strlen($_REQUEST['QRCH_UltmtCdtr_StrtNmOrAdrLine1']) > 0 || strlen($_REQUEST['QRCH_UltmtCdtr_BldgNbOrAdrLine2']) > 0)
+      $ultimate_creditor .= "<br />" . $_REQUEST['QRCH_UltmtCdtr_StrtNmOrAdrLine1'] . " " . $_REQUEST['QRCH_UltmtCdtr_BldgNbOrAdrLine2'];
     $ultimate_creditor .= "<br />" . $_REQUEST['QRCH_UltmtCdtr_Ctry'] . "-" . $_REQUEST['QRCH_UltmtCdtr_PstCd'] . " " . $_REQUEST['QRCH_UltmtCdtr_TwnNm'];
   } else { $ultimate_creditor = ""; }
   
   if (strlen($_REQUEST['QRCH_UltmtDbtr_Name']) > 0) {
     $debtor = $_REQUEST['QRCH_UltmtDbtr_Name'];
-    if (strlen($_REQUEST['QRCH_UltmtDbtr_StrtNm']) > 0 || strlen($_REQUEST['QRCH_UltmtDbtr_BldgNb']) > 0)
-      $debtor .= "<br />" . $_REQUEST['QRCH_UltmtDbtr_StrtNm'] . " " . $_REQUEST['QRCH_UltmtDbtr_BldgNb'];
+    if (strlen($_REQUEST['QRCH_UltmtDbtr_StrtNmOrAdrLine1']) > 0 || strlen($_REQUEST['QRCH_UltmtDbtr_BldgNbOrAdrLine2']) > 0)
+      $debtor .= "<br />" . $_REQUEST['QRCH_UltmtDbtr_StrtNmOrAdrLine1'] . " " . $_REQUEST['QRCH_UltmtDbtr_BldgNbOrAdrLine2'];
     $debtor .= "<br />" . $_REQUEST['QRCH_UltmtDbtr_Ctry'] . "-" . $_REQUEST['QRCH_UltmtDbtr_PstCd'] . " " . $_REQUEST['QRCH_UltmtDbtr_TwnNm'];
   }
   

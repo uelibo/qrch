@@ -11,9 +11,9 @@ if($_REQUEST['QRCH_Header_QRType'] != "SPC") {
 
 // ++ Version     M   Version                                 4     num
 // $_REQUEST['QRCH_Header_Version']
-if($_REQUEST['QRCH_Header_Version'] != "0100") {
-  echo "WARNING: changed Version to 0100\n<br />";
-  $_REQUEST['QRCH_Header_Version'] = "0100";
+if($_REQUEST['QRCH_Header_Version'] != "0200") {
+  echo "WARNING: changed Version to 0200\n<br />";
+  $_REQUEST['QRCH_Header_Version'] = "0200";
 }
 
 // ++ Coding      M   Coding Type                             1     num
@@ -38,14 +38,14 @@ if(strlen($_REQUEST['QRCH_CdtrInf_Cdtr_Name']) > 70)
 if(strlen($_REQUEST['QRCH_CdtrInf_Cdtr_Name']) < 1)
   die("ERROR field creditor name is mandatory");
 
-// +++ StrtNm     O   Strasse/Postfach                       70max
-// $_REQUEST['QRCH_CdtrInf_Cdtr_StrtNm']
-if(strlen($_REQUEST['QRCH_CdtrInf_Cdtr_StrtNm']) > 70)
+// +++ StrtNmOrAdrLine1     O   Strasse/Postfach                       70max
+// $_REQUEST['QRCH_CdtrInf_Cdtr_StrtNmOrAdrLine1']
+if(strlen($_REQUEST['QRCH_CdtrInf_Cdtr_StrtNmOrAdrLine1']) > 70)
   die("ERROR field creditor street is too long");
 
-// +++ BldgNb     O   Hausnummer                             16max
-// $_REQUEST['QRCH_CdtrInf_Cdtr_BldgNb']
-if(strlen($_REQUEST['QRCH_CdtrInf_Cdtr_BldgNb']) > 16)
+// +++ BldgNbOrAdrLine2     O   Hausnummer                             16max
+// $_REQUEST['QRCH_CdtrInf_Cdtr_BldgNbOrAdrLine2']
+if(strlen($_REQUEST['QRCH_CdtrInf_Cdtr_BldgNbOrAdrLine2']) > 70)
   die("ERROR field creditor house number is too long");
 
 // +++ PstCd      M   Postleitzahl (ohne Landescode)         16max
@@ -75,14 +75,14 @@ if(strlen($_REQUEST['QRCH_CdtrInf_Cdtr_Ctry']) != 2)
 if(strlen($_REQUEST['QRCH_UltmtCdtr_Name']) > 70)
   die("ERROR field ultimate creditor name is too long");
 
-// ++ StrtNm      O   Strasse/Postfach                       70max
-// $_REQUEST['QRCH_UltmtCdtr_StrtNm']
+// ++ StrtNmOrAdrLine1      O   Strasse/Postfach                       70max
+// $_REQUEST['QRCH_UltmtCdtr_StrtNmOrAdrLine1']
 if(strlen($_REQUEST['QRCH_UltmtCdtr_Name']) > 70)
   die("ERROR field ultimate creditor street is too long");
 
-// ++ BldgNb      O   Hausnummer                             16max
-// $_REQUEST['QRCH_UltmtCdtr_BldgNb']
-if(strlen($_REQUEST['QRCH_UltmtCdtr_BldgNb']) > 16)
+// ++ BldgNbOrAdrLine2      O   Hausnummer                             16max
+// $_REQUEST['QRCH_UltmtCdtr_BldgNbOrAdrLine2']
+if(strlen($_REQUEST['QRCH_UltmtCdtr_BldgNbOrAdrLine2']) > 70)
   die("ERROR field ultimate creditor house number is too long");
 
 // ++ PstCd       D   Postleitzahl (ohne Landescode)         16max
@@ -122,14 +122,14 @@ if(strlen($_REQUEST['QRCH_CcyAmtDate_ReqdExctnDt']) > 10)
 if(strlen($_REQUEST['QRCH_UltmtDbtr_Name']) > 70)
   die("ERROR field deptor name is too long");
 
-// ++ StrtNm      O   Strasse/Postfach                       70max
-// $_REQUEST['QRCH_UltmtDbtr_StrtNm']
-if(strlen($_REQUEST['QRCH_UltmtDbtr_StrtNm']) > 70)
+// ++ StrtNmOrAdrLine1      O   Strasse/Postfach                       70max
+// $_REQUEST['QRCH_UltmtDbtr_StrtNmOrAdrLine1']
+if(strlen($_REQUEST['QRCH_UltmtDbtr_StrtNmOrAdrLine1']) > 70)
   die("ERROR field deptor street is too long");
 
-// ++ BldgNb      O   Hausnummer                             16max
-// $_REQUEST['QRCH_UltmtDbtr_BldgNb']
-if(strlen($_REQUEST['QRCH_UltmtDbtr_BldgNb']) > 16)
+// ++ BldgNbOrAdrLine2      O   Hausnummer                             16max
+// $_REQUEST['QRCH_UltmtDbtr_BldgNbOrAdrLine2']
+if(strlen($_REQUEST['QRCH_UltmtDbtr_BldgNbOrAdrLine2']) > 16)
   die("ERROR field deptor house number is too long");
 
 // ++ PstCd       D   Postleitzahl (ohne Landescode)         16max
@@ -162,6 +162,12 @@ if(strlen($_REQUEST['QRCH_RmtInf_Ref']) > 27)
 // $_REQUEST['QRCH_RmtInf_Ustrd']
 if(strlen($_REQUEST['QRCH_RmtInf_Ustrd']) > 140)
   die("ERROR field unstructured message is too long");
+
+// +++ Trailer
+// $_REQUEST['QRCH_RmtInf_AddInf_Trailer']
+if($_REQUEST['QRCH_RmtInf_AddInf_Trailer'] != "EPD") {
+  $_REQUEST['QRCH_RmtInf_AddInf_Trailer'] = "EPD";
+}
 
 // + AltPmtInf        (Alternative Verfahren) Opt. Datengruppe
 // ++ AltPmt      A   Parameter altertiver Verfahren 1      100max
